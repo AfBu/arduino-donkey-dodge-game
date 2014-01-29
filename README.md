@@ -15,10 +15,10 @@ Before use, please see config.h file and modify pin configurations!
 
 NES Controller's connector pin diagram:
 
-   |-------\
-   | 1 2 3  \
-   | 4 5 6 7 |
-   |---------|
+	|-------\
+	| 1 2 3  \
+	| 4 5 6 7 |
+	|---------|
 
     1-2 [unused]
 	3 - +5V

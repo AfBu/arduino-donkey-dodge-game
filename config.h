@@ -18,10 +18,4 @@
 #define NES_CLOCK A2
 #define NES_SERIAL A0
 
-/* SD */
-//#define SD_ENABLED
-#define SD_SELECT_PIN 10
-
-/* SERIAL */
-#define SERIAL_BAUD 9600
 

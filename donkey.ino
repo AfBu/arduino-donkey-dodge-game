@@ -4,9 +4,6 @@
 #include "sfx.h"
 #include "NesController.h"
 #include <LiquidCrystal.h>
-#ifdef SD_ENABLED
-#include <SD.h>
-#endif
 
 LiquidCrystal lcd(LCD_RS, LCD_ENABLE, LCD_D4, LCD_D5, LCD_D6, LCD_D7);
 NesController nes(NES_CLOCK, NES_LATCH, NES_SERIAL);
@@ -28,16 +25,10 @@ boolean donkeyHit = false;
 int donkeyBeep = 0;
 
 void setup() {
-  // initialize serial
-  Serial.begin(SERIAL_BAUD);
   // initialize LCD with loading text
   initLcd();
   // initialize sound
   pinMode(SOUND_PIN, OUTPUT);
-  // initialize SD card
-  #ifdef SD_ENABLED
-  initSd();
-  #endif
   
   startGame();
 }
@@ -278,13 +269,6 @@ void initLcd()
   lcd.createChar(6, gfx6);
   lcd.createChar(7, gfx7);
 }
-
-#ifdef SD_ENABLED
-void initSd()
-{
-  SD.begin(SD_SELECT_PIN);
-}
-#endif
 
 /* MISC */
 
